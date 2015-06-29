@@ -1,0 +1,45 @@
+F:\Project 2 code\Project1\Finan\bin\Debug\Finan.exe.config
+F:\Project 2 code\Project1\Finan\bin\Debug\Finan.exe
+F:\Project 2 code\Project1\Finan\bin\Debug\Finan.pdb
+F:\Project 2 code\Project1\Finan\bin\Debug\AForge.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\AForge.Imaging.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\AForge.Math.dll
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.MainForm.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.Properties.Resources.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.InleesView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.ResultDialogView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.ResultView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.csproj.GenerateResource.Cache
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.exe
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.pdb
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.MainView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.LoadMapView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.csprojResolveAssemblyReference.cache
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.View.SettingsView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.View.AdminLoginView.resources
+F:\Project 2 code\Project1\Finan\bin\Debug\Finan.XML
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.View.StatisticView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.View.CustomDataGridView.resources
+F:\Project 2 code\Project1\Finan\bin\Debug\itextsharp.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\itextsharp.xml
+F:\Project 2 code\Project1\Finan\bin\Debug\ZedGraph.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\ZedGraph.xml
+F:\Project 2 code\Project1\Finan\bin\Debug\de\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\es\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\fr\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\hu\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\it\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\ja\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\pt\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\ru\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\sk\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\sv\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\tr\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\zh-cn\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\bin\Debug\zh-tw\ZedGraph.resources.dll
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.View.PlotterView.resources
+F:\Project 2 code\Project1\Finan\obj\Debug\Finan.Model.PlotterController.resources
+D:\Google Drive\School\Windesheim\ICTSE1a\Project 2\Inleveren - klant\Code\Finan\bin\Debug\Finan.exe.config
+D:\Google Drive\School\Windesheim\ICTSE1a\Project 2\Inleveren - klant\Code\Finan\bin\Debug\Finan.XML
+D:\Google Drive\School\Windesheim\ICTSE1a\Project 2\Inleveren - klant\Code\Finan\obj\Debug\Finan.exe
+D:\Google Drive\School\Windesheim\ICTSE1a\Project 2\Inleveren - klant\Code\Finan\obj\Debug\Finan.pdb

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Finan.Controller.ColonyController" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAECQAAAAAAACQAAAQAAACJIJCAAAAAgAgATAAAiAAA=</HashCode>
+      <FileName>Controller\ColonyController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Controller.FileController">
+    <Position X="1.25" Y="4.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAABAAIAAAIQAAgEABAAAAwAIAAAAgAAAA=</HashCode>
+      <FileName>Controller\FileController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.Controller.FtpController" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAQAAEgAAAAAAkAAAAAARA=</HashCode>
+      <FileName>Controller\FtpController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Controller.InleesViewController">
+    <Position X="1" Y="0.5" Width="5.5" />
+    <AssociationLine Name="mainController" Type="Finan.Controller.MainController" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="1.062" />
+        <Point X="7.75" Y="1.062" />
+        <Point X="7.75" Y="3.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAgBAAMAAAABCAgAAAgCAAAAIA=</HashCode>
+      <FileName>Controller\InleesViewController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.Controller.MainController">
+    <Position X="7.25" Y="3.5" Width="3.25" />
+    <AssociationLine Name="inleesViewController" Type="Finan.Controller.InleesViewController" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="4.429" />
+        <Point X="2.688" Y="4.429" />
+        <Point X="2.688" Y="4.17" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IEAAABAEAAAAIwIAEgQAEAAAggAABAAAAAAgAgAAAAA=</HashCode>
+      <FileName>Controller\MainController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="inleesView" />
+      <Field Name="inleesViewController" />
+      <Field Name="loadMapView" />
+      <Field Name="fileSelectController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.Controller.MainViewController" Collapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAQACAAgAAAAAEAAAAAQAAAAAAAAgAAAAAAAAACA=</HashCode>
+      <FileName>Controller\MainViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Controller.ResultController" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQQAABAAwAACAAIAEEABAAQAAAAAEIAgAgYCMAQEAAI=</HashCode>
+      <FileName>Controller\ResultController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Controller.ResultDialogController" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAgAAAAAAAQABA=</HashCode>
+      <FileName>Controller\ResultDialogController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.ColonyModel" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Model\ColonyModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.ConnectionModel" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAABAAAAAAAAAAAAAAECAgAAAQA=</HashCode>
+      <FileName>Model\ConnectionModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.ResultModel" Collapsed="true">
+    <Position X="21.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAAAAABAgMAAEAAAEEAAAABCAAAAAMVkAQAEAAA=</HashCode>
+      <FileName>Model\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Program" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.CustomPanelView" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\CustomPanelView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.InleesView" Collapsed="true">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAMAAUFSIgCZAwyEPAGAMCiCgWCASpgECRIACoQaA=</HashCode>
+      <FileName>View\InleesView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.LoadMapView" Collapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAAABAAACAAAACAAAAAAAgAAAMAAAACAA=</HashCode>
+      <FileName>View\LoadMapView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.MainForm" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAgAAEAAAA=</HashCode>
+      <FileName>View\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.MainView" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQgAAAAEACQAAAIABACACAQCACAAhAAoECAgAAAABAA=</HashCode>
+      <FileName>View\MainView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.ResultDialogView" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>woAAIAAkESIAytAQyIaIGaMCoSIUCAMhAICRKAGoQSA=</HashCode>
+      <FileName>View\ResultDialogView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.ResultView" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCCAkIEADAgAEAGACCSEgQCAhCDAAAgJFigAAIABDA=</HashCode>
+      <FileName>View\ResultView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Properties.Resources" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.Properties.Settings" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.View.AdminLoginView" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAACAAABAAAACAAAACAAAYBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminLoginView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Finan.View.SettingsView" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAIAAEASIAAJAQyAKAGAECAAAEAAABAAARIACoQAA=</HashCode>
+      <FileName>View\SettingsView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Finan.MainController" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IEAAABAEAAAAIwIBEgQAEAAAggAABAAAAAAgAgAAAAA=</HashCode>
+      <FileName>Controller\MainController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="resultDialogController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.ResultDialogView">
+    <Position X="0.5" Y="1" Width="2.75" />
+    <Members>
+      <Method Name="Dispose" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>woAAIAAkESIAytAQyYaIGaMCoSIUCAMhAACRKAGoQSA=</HashCode>
+      <FileName>View\ResultDialogView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainController" />
+      <Field Name="resultDialogController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Finan.Controller.ResultDialogController">
+    <Position X="4.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAgAAAAAAAQABA=</HashCode>
+      <FileName>Controller\ResultDialogController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mainController" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

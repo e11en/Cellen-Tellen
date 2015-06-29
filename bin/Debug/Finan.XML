@@ -1,0 +1,915 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Finan</name>
+    </assembly>
+    <members>
+        <member name="T:Finan.Controller.ColonyController">
+            <summary>
+            In the ColonyController the image in the PictureBox will be pasted through a filter.
+            The remaining objects in de image will be checked if the shape is a circel.
+            If that is the case the shape will be added to the CellList.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.#ctor">
+            <summary>
+            Constructor, the parameter mainController is needed for the use of other classes
+            that are located in de MainController class.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.Initialize">
+            <summary>
+            Initialize the needed components for this class.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.SetBlobCounter">
+            <summary>
+            Create a new instance of the BlobCounter and set the minimal size of a blob.
+            Also the maximum height for a single blob is set.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.FilterImgBgSelect">
+            <summary>
+            The ColorFilter is applied with the ColorRange from the background
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.FilterImgColonySelect">
+            <summary>
+            The ColorFilter is applied with the ColorRange from the colony.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.BlobCounterToList(AForge.Imaging.Blob[])">
+            <summary>
+            The arrayListOfArrayLists of blobs is converted to a resultList.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.ProcessImage(System.Windows.Forms.PictureBox,System.Boolean)">
+            <summary>
+            The main methode for the shape detection in a PictureBox image.
+            </summary>
+            <param name="pb">PictureBox, the image is used to set the BitMap.</param>
+            <param name="bgSelect">Selects the methode of filtering to use.</param>
+            <returns>The complete resultList of blobs that where detected as circles.</returns>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.ProcessCellList(System.Collections.Generic.List{Finan.ColonyModel},System.Collections.Generic.List{Finan.ColonyModel})">
+            <summary>
+            COMPARE BOTH CELL LISTS AND CREATE ONE LIST
+            </summary>
+            <param name="one">FIRST LIST, MADE WITH BACKGROUND FILTER</param>
+            <param name="two">SECOND LIST, MADE WITH COLONY FILTER</param>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.ProcessIMG(System.Boolean)">
+            <summary>
+            APPLY FILTER TO IMAGE
+            </summary>
+            <param name="bgSelect">TRUE, SET BACKGROUND FILTER. FALSE, SET COLONY FILTER</param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.AddColony(System.Int32,System.Int32,System.Windows.Forms.PictureBox,Finan.ResultModel)">
+            <summary>
+            Add a colony to the current ResultModel.
+            </summary>
+            <param name="x">Mouse X position.</param>
+            <param name="y">Mouse Y position.</param>
+            <param name="pictureBox">The current PictureBox that is used.</param>
+            <param name="resultModel">The current used ResultModel.</param>
+            // ADD COLONY TO RESULT MODEL
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Finan.Controller.ColonyController.GetAverageRadius(Finan.ResultModel)" -->
+        <member name="M:Finan.Controller.ColonyController.RemoveKolonie(System.Int32,System.Int32,System.Windows.Forms.PictureBox,Finan.ResultModel)">
+            <summary>
+            Remove a colony from the current ResultModel.
+            </summary>
+            <param name="x">Mouse X position.</param>
+            <param name="y">Mouse Y position.</param>
+            <param name="pictureBox">The current PictureBox that is used.</param>
+            <param name="resultModel">The current used ResultModel.</param>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.ClickedOnColony(System.Int32,System.Int32,Finan.ColonyModel)">
+            <summary>
+            Check if the given position is equal to a existing colony.
+            </summary>
+            <param name="x">Mouse X position.</param>
+            <param name="y">Mouse Y position.</param>
+            <param name="c">Current used ColonyModel</param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.SetColorRange(System.Windows.Forms.PictureBox,System.Windows.Forms.MouseEventArgs,System.Boolean)">
+            <summary>
+            Set the color used in both filters.
+            </summary>
+            <param name="pb">Current used PictureBox.</param>
+            <param name="e">Mouse events, used to get the location.</param>
+        </member>
+        <member name="M:Finan.Controller.ColonyController.TranslateZoomMousePosition(System.Drawing.Point,System.Windows.Forms.PictureBox)">
+            <summary>
+            Translate the given X and Y to the relative position in the shown PictureBox.
+            </summary>
+            <param name="coordinates">The X and Y Point.</param>
+            <param name="pictureBox">The current used PictureBox.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Finan.Controller.FileController">
+            <summary>
+            The controller related to files
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.FileController.SelectPicture">
+            <summary>
+            Opens a dialog where you can select multiple pictures. Selected pictures will then be loaded in to the program,
+            and will be displayed in the multi view.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.InleesViewController.AddPicture">
+            <summary>
+            Adds pictures to the multi view panel in the proper position. 
+            Position example: ([] = picture)
+            [][][][][][][]
+            [][][][][][][]
+            [][][]
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.InleesViewController.CheckForEmptyField">
+            <summary>
+            Checks if the variables in currentModel have a legit value
+            if they don't then the field that is linked to that value gets an error on it
+            Error is also put on the left top side of the selected field and the boolean is set to true.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Finan.Controller.MainController">
+            <summary>
+            The heart of the program. The different views and controllers are initialize here.
+            </summary>
+        </member>
+        <member name="F:Finan.Controller.MainController.isAdministrator">
+            <summary>
+            Boolean to see if the current user is logged in as an administrator. True indicated that the user is logged in as administrator. 
+            False indicates a normal user. Administrators have more options than normal users.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.MainController.#ctor">
+            <summary>
+            Constructor for the MainController.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.MainController.Initialize">
+            <summary>
+            All the variables are initialized here.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.MainViewController.OpenAdminLoginWindow">
+            <summary>
+            Creates the adminLoginView. The user can login with this view. If the password is correct, login. 
+            If not, show error and rerun this method.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.MainViewController.LogInAdmin">
+            <summary>
+            Login as an administrator and show successful message box, Also sets inloggen and uitloggen tool strip items
+            and changes the formname
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.MainViewController.LogOutAdmin">
+            <summary>
+            Log out administrator and show successful message box, Also sets inloggen and uitloggen tool strip items
+            and changesthe form name
+            </summary>
+        </member>
+        <member name="T:Finan.Controller.ResultController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.#ctor">
+            <summary>
+            Create empty ResultController.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.deleteSelected">
+            <summary>
+            Shows an message asking a user to delete selected records
+            if user agrees then it will create an connection to the database
+            After which it will loop through every valueIndex in checkedItems. Creating a delete query which removes the valueIndex from the database. And removing the image from the filestorage
+            If an error occurs it is shown with a message containing what went wrong.
+            After this it will close the connection if it is still open. Clear the resultList and refresh the datagridview.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.RemoveRows">
+            <summary>
+            Checks if there is a checkbox selected.
+            At the end the dataview is refreshed so any row that is deleted isn't shown again.
+            When there is no checkbox selected it will look at highlighted cells.
+            It will then collect all the cells in a resultList which will then be filtered for identical rows.
+            After this step it will retrieve all the ID's from the datagridview.
+            It will then execute the delete method.
+            If nothing is selected it will show a message warning a user to select a field.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.LoadTableData(System.Boolean)">
+            <summary>
+            Returns the table and fills it into the grid.
+            If reset = true (which is only done when pagesize is changed) current page will be set to 0.
+            This prevents that when the user is on page 30 and changes to size to i.e. 40 that the label shows : 30/3 (on page 30 of 3).
+            If reset = false this will be ignored.
+            </summary>
+            <param name="reset"></param>
+        </member>
+        <member name="M:Finan.Controller.ResultController.HighlightSelected(System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Highlights the current selected row if it's checkbox is checked.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.Controller.ResultController.SetDataGridViewRowAsHighlighted">
+            <summary>
+            Highlights all the rows that are contained in the checkedItems resultList
+            It also checks the checkbox if it is found in the checkedItems 
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.GetColonyListFromString(System.String)">
+            <summary>
+            Returns a resultList of colonyModels from a string.
+            </summary>
+            <param name="kolonie_positie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.Controller.ResultController.FillGrid">
+            <summary>
+            Fill the attributes and properties. This is later called in LoadPage().
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.GetCount">
+            <summary>
+            Method returns amount of rows there are in the database.
+            </summary>
+            <returns>count</returns>
+        </member>
+        <member name="M:Finan.Controller.ResultController.GoFirst">
+            <summary>
+            When the go first button is pressed.
+            When the user is at the first page, this won't run.
+            When the user isn't at the first page, this will run.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.GoPrevious">
+            <summary>
+            When the go previous button is pressed.
+            When the user ISN't at the first page this will run.
+            When the user IS at the first page, this WON'T run.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.GoNext">
+            <summary>
+            When the go next button is pressed.
+            If the user isn't at the last page this will run.
+            If the user IS at the last page, this WON'T run.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.GoLast">
+            <summary>
+            When the go last button is pressed, this will run. If the user isnt on the last page
+            the current page will be set to the last page. if the user is on the last page, the page won't be changed.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.ResultController.getResultSelection(Finan.View.CustomDataGridView)">
+            <summary>
+            Returns a Array with arraylists ith the content of the selected columns
+            </summary>
+            <param name="dataGrid">The dataGrid with the selected data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.Controller.ResultDialogController.#ctor(Finan.Controller.MainController)">
+            <summary>
+            Constructor for the class.
+            </summary>
+            <param name="mainController"></param>
+        </member>
+        <member name="M:Finan.Controller.ResultDialogController.TextBoxEmpty(System.Windows.Forms.TextBoxBase[])">
+            <summary>
+            Checks if any textboxes are empty.
+            </summary>
+            <param name="forms">The forms to check.</param>
+            <returns>True if any textbox is emty, elsereturns false.</returns>
+        </member>
+        <member name="M:Finan.Controller.ResultDialogController.ResultModelToDB(Finan.ResultModel)">
+            <summary>
+            Saves a resultModel to the database
+            </summary>
+            <param name="resultModel">The resultModel to save.</param>
+        </member>
+        <member name="F:Finan.Controller.StatisticController.stringArrayIndex">
+            <summary>
+            the selected column that contains strings
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.StatisticController.CreateBoxPlots(System.Collections.Generic.List{Finan.StatisticModel})">
+            <summary>
+            Clear controls and create a new boxplots.
+            Also adjusts the table column size so it all scales well.
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.StatisticController.StringDetection(System.Collections.ArrayList[])">
+            <summary>
+            Returns true or false depending on if a string is detected in a array list of arrayLists. used by GetSelectedData().
+            </summary>
+            <param name="arrayListOfArrayLists"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.Controller.StatisticController.CreateStatisticModelFromArrayList(System.Collections.ArrayList)">
+            <summary>
+            Create a staticModel from a given array list. used by GetSelectedData().
+            </summary>
+            <param name="arrayList"></param>
+        </member>
+        <member name="M:Finan.Controller.StatisticController.getResultList(System.Collections.ArrayList[])">
+            <summary>
+            returns a arrayList with different arraylists. Each containing data (int) from different strings. used by GetSelectedData.
+            </summary>
+            <param name="selectedColumns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.Controller.StatisticController.GetSelectedData">
+            <summary>
+            Get the selected data from the result screen and calculate the data for it (median, first third quartile etc.)
+            </summary>
+        </member>
+        <member name="M:Finan.Controller.StatisticController.setPlotter">
+            <summary>
+            Creates and sets a plotter
+            </summary>
+        </member>
+        <member name="M:Finan.ImageExporter.ExportPdf(System.Drawing.Image,System.String)">
+            <summary>
+            Creates an pdf of the given image at the given location
+            </summary>
+            <param name="image"></param>
+            <param name="fileLocation"></param>
+        </member>
+        <member name="M:Finan.ImageExporter.ExportImage(System.Drawing.Image,System.String)">
+            <summary>
+            Creates an jpg of the given image at the given location.
+            </summary>
+            <param name="image"></param>
+            <param name="filelocation"></param>
+        </member>
+        <member name="T:Finan.Model.BoxPlotModel">
+            <summary>
+            Main class for creating new boxplots
+            </summary>
+        </member>
+        <member name="M:Finan.Model.BoxPlotModel.#ctor">
+            <summary>
+            Create a test boxplot. It has some test values in it
+            </summary>
+        </member>
+        <member name="M:Finan.Model.BoxPlotModel.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary>
+            Create a boxplot with costum values
+            </summary>
+            <param name="lowerWhisker"></param>
+            <param name="upperWhisker"></param>
+            <param name="lowerBox"></param>
+            <param name="upperBox"></param>
+            <param name="average"></param>
+            <param name="median"></param>
+        </member>
+        <member name="M:Finan.Model.BoxPlotModel.Initialize(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary>
+            Initialisize the boxplot
+            </summary>
+            <param name="lowerWhisker"></param>
+            <param name="upperWhisker"></param>
+            <param name="lowerBox"></param>
+            <param name="upperBox"></param>
+            <param name="average"></param>
+            <param name="median"></param>
+        </member>
+        <member name="M:Finan.StatisticModel.#ctor">
+            <summary>
+            Create a fake statistics model
+            </summary>
+        </member>
+        <member name="F:Finan.Model.PlotterController.gradient">
+            <summary>
+            Gradient of plotter.
+            </summary>
+        </member>
+        <member name="M:Finan.Model.PlotterController.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Finan.Model.PlotterController.Init">
+            <summary>
+            Initialize plotter.
+            </summary>
+        </member>
+        <member name="M:Finan.Model.PlotterController.AddPoints(System.Collections.ArrayList[])">
+            <summary>
+            Add points to the plotter
+            </summary>
+            <param name="points"></param>
+        </member>
+        <member name="M:Finan.Model.PlotterController.Invert">
+            <summary>
+            Invert the plotter.
+            </summary>
+        </member>
+        <member name="M:Finan.Model.PlotterController.getMax(System.Collections.ArrayList)">
+            <summary>
+            Get higest number in arraylist.
+            </summary>
+            <param name="list">ArrayList</param>
+            <returns>int with highest number</returns>
+        </member>
+        <member name="M:Finan.Model.PlotterController.getMin(System.Collections.ArrayList)">
+            <summary>
+            Get lowest number in arraylist.
+            </summary>
+            <param name="list"></param>
+            <returns>int with lowest number</returns>
+        </member>
+        <member name="T:Finan.StatisticCalculator">
+            <summary>
+            This class is used to calculate statistics.
+            </summary>
+        </member>
+        <member name="M:Finan.StatisticCalculator.Average(System.Collections.ArrayList)">
+            <summary>
+            Calculates the average from the resultList.
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.StandardDeviation(System.Collections.ArrayList)">
+            <summary>
+            Calculates the standard deviation (standaard afwijking). 
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.SmallestValue(System.Collections.ArrayList)">
+            <summary>
+            This returns the smallest value of a resultList.
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.BiggestValue(System.Collections.ArrayList)">
+            <summary>
+            Returns the biggest value of a resultList.
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.FirstQuartile(System.Collections.ArrayList)">
+            <summary>
+            Calculates the first quartile. 
+            positionRounded is used to check if the position variable is a decimal.
+            if positionRounded - position is bigger than 0 and smaller than 1, it meants that position is a decimal.
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.Median(System.Collections.ArrayList)">
+            <summary>
+            Calculates the Median. 
+            positionRounded is used to check if the position variable is a decimal.
+            if positionRounded - position is bigger than 0 and smaller than 1, it meants that position is a decimal.
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.ThirdQuartile(System.Collections.ArrayList)">
+            <summary>
+            Calculates the third quartile. 
+            positionRounded is used to check if the position variable is a decimal.
+            if positionRounded - position is bigger than 0 and smaller than 1, it meants that position is a decimal.
+            When something goes wrong, return -1 so this can be displayed the right way in the label!(i.e string selected)
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.ConvertToList(System.Collections.ArrayList)">
+            <summary>
+            Converts the arraylist to a int resultList. this is done so you can sort the resultList.
+            </summary>
+            <param name="resultList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Finan.StatisticCalculator.getGradient(System.Collections.ArrayList[])">
+            <summary>
+            
+            </summary>
+            <param name="points"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Finan.View.AdminLoginView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.View.AdminLoginView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.View.AdminLoginView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Finan.LoadMapView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.LoadMapView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.LoadMapView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Finan.MainView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.MainView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.MainView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Finan.MainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.MainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Finan.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Finan.InleesView.#ctor(Finan.Controller.MainController)">
+            <summary>
+            CONSTRUCTOR FOR THE INLEESVIEW
+            </summary>
+            <param name="mainController"></param>
+        </member>
+        <member name="M:Finan.InleesView.RefreshTxt">
+            <summary>
+            REFRESH ALL TEXT BOXES
+            </summary>
+        </member>
+        <member name="M:Finan.InleesView.btnReset_Click(System.Object,System.EventArgs)">
+            <summary>
+            CLICKED ON THE BUTTON RESET
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.InleesView.SetTextBoxes(Finan.ResultModel)">
+            <summary>
+            SET ALL THE TEXTBOXES
+            </summary>
+            <param name="resultModel">THE CURRENT RESULT MODEL</param>
+        </member>
+        <member name="M:Finan.InleesView.SetButtons(System.Boolean)">
+            <summary>
+            ENABLE OR DISABLE THE BUTTONS
+            </summary>
+            <param name="berekend">CHECK IF RESULT IS ALREADY CALCULATED</param>
+        </member>
+        <member name="M:Finan.InleesView.DrawCircles">
+            <summary>
+            DRAW CIRKEL FOR EACH COLONY
+            </summary>
+        </member>
+        <member name="M:Finan.InleesView.inleesImageListView_Resize(System.Object,System.EventArgs)">
+            <summary>
+            On panel resize, run AddPicture method. Image panels will be repositioned according to the panel width
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.InleesView.inleesImageListView_MouseEnter(System.Object,System.EventArgs)">
+            <summary>
+            If the mouse enters the pannel, set focus. This is used for the mouse wheel, so you can scroll with it.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Finan.InleesView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.InleesView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.InleesView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Finan.View.PlotterView.#ctor">
+            <summary>
+            Constructor for the class.
+            </summary>
+        </member>
+        <member name="M:Finan.View.PlotterView.setPlotter(Finan.Model.PlotterController)">
+            <summary>
+            Set a plotter to this view.
+            </summary>
+            <param name="p">PlotterModel to display</param>
+        </member>
+        <member name="M:Finan.View.PlotterView.setLabel">
+            <summary>
+            Set label text.
+            </summary>
+        </member>
+        <member name="M:Finan.View.PlotterView.buttonInvert_Click(System.Object,System.EventArgs)">
+            <summary>
+            On button invert click, invert the plotter and reset the label.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Finan.View.PlotterView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.View.PlotterView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.View.PlotterView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Finan.ResultDialogView.#ctor(System.Boolean,Finan.Controller.MainController)">
+            <summary>
+            Constructor for the class.
+            </summary>
+            <param name="editable">Boolean whether the dialog should be editable.</param>
+            <param name="mainController"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.SetButtons(System.Boolean,System.Boolean)">
+            <summary>
+            Sets the buttons enabled or not enabled.
+            </summary>
+            <param name="berekend">Boolean whether button berekend has been clicked on.</param>
+            <param name="editable">Boolean whether the dialog should be edited.</param>
+        </member>
+        <member name="M:Finan.ResultDialogView.DrawCircles">
+            <summary>
+            Draws the circles from the ResultModel.
+            </summary>
+        </member>
+        <member name="M:Finan.ResultDialogView.MakeEditable">
+            <summary>
+            Set the editable of the items equal to boolean editable.
+            </summary>
+        </member>
+        <member name="M:Finan.ResultDialogView.SetTextBox">
+            <summary>
+            Set textboxes with information from the resultModel
+            </summary>
+        </member>
+        <member name="M:Finan.ResultDialogView.rbAchtergrond_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Sets the boolean whether to search for colonies or background.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.checkBoxBewerk_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Changes whether the dialog should be editable on Checkbox click.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.buttonAnnuleren_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the dialog on annuleren click.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.nm_Leave(System.Object,System.EventArgs)">
+            <summary>
+            Set the numericbox text equal to the value.
+            Prevents empty numericboxes.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.item_Click(System.Object,System.EventArgs)">
+            <summary>
+            Sets a warning message if the dialoag is not editable.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.buttonOpslaan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Saves the resultModel to the database.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.bodemComboBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Prevents typing in combobox when editable is false.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.buttonBereken_Click(System.Object,System.EventArgs)">
+            <summary>
+            Counts the number of colonies on berken click.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.buttonReset_Click(System.Object,System.EventArgs)">
+            <summary>
+            Resets the number of colonies on reset click.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Finan.ResultDialogView.pictureBox_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Adds a colony on left mouse click.
+            Removes a colony on right mouse click.
+            Selects a color on left mouse click when there is no color selected.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Finan.ResultDialogView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.ResultDialogView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.ResultDialogView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Finan.ResultView.statisticButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Whenever the user clicks on Statistic he will be redirected to the third label with the correct data filled.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Finan.ResultView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.ResultView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.ResultView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Finan.View.SettingsView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.View.SettingsView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.View.SettingsView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Finan.View.StatisticView.SetData(Finan.StatisticModel,System.Int32)">
+            <summary>
+            The data in statistic view should be changed when this is ran. All the data is retrieved from StatisticModel sm
+            </summary>
+            <param name="sm"></param> The statistic model that is going to be used.
+            <param name="res"></param>This will either be 1 or 2. When its 1 it should change the data for label 1 and if its 2 it should change label 2
+        </member>
+        <member name="M:Finan.View.StatisticView.ClearData">
+            <summary>
+            Clear all the data, this is used whenever an exception is caught.
+            </summary>
+        </member>
+        <member name="F:Finan.View.StatisticView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.View.StatisticView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.View.StatisticView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Finan.View.CustomDataGridView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Finan.View.CustomDataGridView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Finan.View.CustomDataGridView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Finan.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Finan.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Finan.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
